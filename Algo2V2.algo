@@ -1,0 +1,26 @@
+ALGORITHM sumDistinctElementsV2
+VAR
+    arry1,arry2,arry3 : ARRAY_OF INTEGER[100];
+    sum,i,j,c:INTEGER;
+    rep:BOOLEAN;
+    n,m:INTEGER;
+BEGIN
+    n:=arry1.length-1
+    m:=arry2.length-1
+    sum=0;
+    FOR i FROM 0 TO m STEP 1  DO
+        arry1[i+n]:=arry2[i]
+    END_FOR
+    FOR j FROM 0 TO n+m STEP 1  DO
+    rep:=FALSE
+    c:=0
+        WHILE (arry1[j]=arry3[c] OR c<arry1.length OR rep=FALSE)  DO
+            rep:=TRUE
+            c:=c+1
+        END_WHILE
+        IF(rep=FALSE) THEN
+            sum:=arry1[j]
+        END_IF
+    END_FOR
+    Write('The sum of distinict number between',arry1,'and',arry2,'is',sum)
+END
